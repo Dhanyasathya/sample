@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Sales Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="interview_score3" placeholder="StoreID" required="required" /><br>
+    	<input type="date" name="experience" placeholder="Date" required="required" /><br>
+        <!--<input type="text" name="test_score" placeholder="Date" required="required" /><br> -->
+        <!--<input type="text" name="interview_score5" placeholder="Week" required="required" /><br>-->
+        
+       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large" style="margin:5px;">Predict</button>
+        
+    </form>
+    <form action="{{ url_for('plot')}}"method="post">
+      
+        <button type="submit" class="btn btn-primary btn-block btn-large" style="margin:5px;">Visualize</button>
+        
+           
+    </form>
+    
+    <img src="https://img.etimg.com/thumb/msid-63369488,width-1200,height-900,imgsize-13457,overlay-economictimes/photo.jpg"
+        style='position:fixed; top:0; left:0;'   width="250"
+         height="90" />
+    
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
+
+
